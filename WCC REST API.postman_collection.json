@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "3916ed8b-1afe-43ee-9e92-a87f80a01e25",
+		"name": "WCC REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8995863"
+	},
+	"item": [
+		{
+			"name": "Login as Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "wcc_admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "wcc_user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU0OTg3OX0.waabgV4EMgJI_fPci1R0jDT2h7N_SOtKmG3_5hdG_90",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "wcc_user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/management/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"management",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU2Mjk2MH0._LHYx9rTYlXNzpyZirGsDnsDsS7uyIAUoe2_gI-LtJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Nicolas Ibarguen\",\r\n    \"username\":\"niko\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/management/user/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"management",
+						"user",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDQwNDk2NH0.vLkYMZ0dRqBfQMtd4Ik6W_Slb0ZcpK_uWCcu094e2bU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"username\":\"iries\",\r\n    \"role\":\"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/management/role/add-to-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"management",
+						"role",
+						"add-to-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Postcodes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU3NDA4N30.3l8ZhLc6mvtxkklKymdrF5b3BUZ01NZLFZe65rD4lUg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/postcodes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"postcodes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Postcode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU1MzA3M30.PwraXXvClHlCU62CWO8A58d3YZAUopthB_ouymJm280",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postcode\":\"PL19 9FG\",\r\n    \"latitude\": 50.536526,\r\n    \"longitude\": -4.133728\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/postcode/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"postcode",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Multiple Postcodes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU1MzA3M30.PwraXXvClHlCU62CWO8A58d3YZAUopthB_ouymJm280",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\t{\r\n\t\t\"postcode\": \"PL24 2ED\",\r\n\t\t\"latitude\": 50.360918,\r\n\t\t\"longitude\": -4.739331\r\n\t},\r\n\t{\r\n\t\t\"postcode\": \"PL24 2FA\",\r\n\t\t\"latitude\": 50.343216,\r\n\t\t\"longitude\": -4.721906\r\n\t},\r\n\t{\r\n\t\t\"postcode\": \"PL24 2FB\",\r\n\t\t\"latitude\": 50.349167,\r\n\t\t\"longitude\": -4.712226\r\n\t},\r\n\t{\r\n\t\t\"postcode\": \"PL24 2FE\",\r\n\t\t\"latitude\": 50.350402,\r\n\t\t\"longitude\": -4.712873\r\n\t}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/postcodes/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"postcodes",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get distance for saved postcodes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU3NDA4N30.3l8ZhLc6mvtxkklKymdrF5b3BUZ01NZLFZe65rD4lUg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postcodeA\":\"AB11 6UL\",\r\n    \"postcodeB\":\"AB11 8RQ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/postcodes/distance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"postcodes",
+						"distance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get distance for NOT yet saved postcodes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3Y2NfYWRtaW4iLCJyb2xlcyI6WyJST0xFX0FETUlOIl0sImlzcyI6IldDQyIsImV4cCI6MTY1NDU3NDA4N30.3l8ZhLc6mvtxkklKymdrF5b3BUZ01NZLFZe65rD4lUg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postcodeA\":\"AB11 6UL\",\r\n    \"postcodeB\":\"L18 7JW\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/geo-distance/postcodes/distance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"geo-distance",
+						"postcodes",
+						"distance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
