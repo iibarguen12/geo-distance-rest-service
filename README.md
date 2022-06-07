@@ -13,16 +13,16 @@ The project is divided in two main parts, a Spring Boot app as REST API and a My
 Once started, the project creates the respectibe tables in MySQL and inserts some users and roles to be able to use the app, and then, it fetchs the first 100 records of the http://www.freemaptools.com/download/full-postcodes/postcodes.zip file with the information of postacl codes from UK.
 
 The different endpoints to acces are:
-1. UserResource
-  -Login: http://localhost:8081/v1/geo-distance/login
-  -Get Users: http://localhost:8081/v1/geo-distance/management/users
-  -Add User: http://localhost:8081/v1/geo-distance/management/user/save
-  -Add Role to User: http://localhost:8081/v1/geo-distance/management/role/add-to-user 
+1. UserResource:
+  - Login: http://localhost:8081/v1/geo-distance/login
+  - Get Users: http://localhost:8081/v1/geo-distance/management/users
+  - Add User: http://localhost:8081/v1/geo-distance/management/user/save
+  - Add Role to User: http://localhost:8081/v1/geo-distance/management/role/add-to-user 
 2. PostcodeResource
-  -Get Poscodes: http://localhost:8081/v1/geo-distance/postcodes
-  -Save or Update Postcode: http://localhost:8081/v1/geo-distance/postcode/save
-  -Save or Update multiple Poscodes: http://localhost:8081/v1/geo-distance/postcodes/save
-  -Get the distance between two Postcodes: http://localhost:8081/v1/geo-distance/postcodes/distance
+  - Get Poscodes: http://localhost:8081/v1/geo-distance/postcodes
+  - Save or Update Postcode: http://localhost:8081/v1/geo-distance/postcode/save
+  - Save or Update multiple Poscodes: http://localhost:8081/v1/geo-distance/postcodes/save
+  - Get the distance between two Postcodes: http://localhost:8081/v1/geo-distance/postcodes/distance
 
 There is also a Postman collection with all the test for each endpoint, and as well there is a JUnit test for each one inside the project.
 
